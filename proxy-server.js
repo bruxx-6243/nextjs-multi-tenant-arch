@@ -13,7 +13,6 @@ const server = http.createServer((req, res) => {
   const host = req.headers.host;
   console.log(`Proxy: Incoming request for host: ${host}, path: ${req.url}`);
 
-  // Redirige todas las solicitudes a tu app Next.js
   proxy.web(req, res, {
     target: `http://localhost:${NEXT_SERVER_PORT}`,
     changeOrigin: false,
