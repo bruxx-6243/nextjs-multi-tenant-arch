@@ -76,10 +76,8 @@ export default function Home() {
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full py-3 rounded-lg text-white focus:outline-none transition-all duration-200 transform font-semibold ${
-            isLoading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 cursor-pointer"
+          className={`w-full py-3 rounded-lg text-white focus:outline-none transition-all duration-200 transform font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700  ${
+            isLoading ? "cursor-not-allowed" : "cursor-pointer"
           }`}
         >
           {isLoading ? (
@@ -113,15 +111,13 @@ export default function Home() {
       </form>
 
       {message && (
-        <div className="mt-6 p-4 bg-green-100 rounded-lg text-green-700">
-          <h2 className="font-semibold">Success</h2>
+        <div className="mt-6 p-4 bg-green-100 rounded-lg text-green-700 text-sm">
           <p>{message}</p>
         </div>
       )}
 
       {error && (
-        <div className="mt-6 p-4 bg-red-100 rounded-lg text-red-700">
-          <h3 className="font-semibold">Error</h3>
+        <div className="mt-6 p-4 bg-red-100 rounded-lg text-red-700 text-sm">
           <p>{error}</p>
         </div>
       )}
